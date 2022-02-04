@@ -113,25 +113,21 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 
 
-DEFAULT_FILE_STORAGE = 'mysite.custom_azure.AzureMediaStorage'
-MEDIA_LOCATION = '1643598710-615496'
-AZURE_ACCOUNT_NAME = "pointclouds1"
-AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
+#DEFAULT_FILE_STORAGE = 'mysite.custom_azure.AzureMediaStorage'
+#MEDIA_LOCATION = '1643598710-615496'
+#AZURE_ACCOUNT_NAME = "pointclouds1"
+#AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+#MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'

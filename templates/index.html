@@ -11,11 +11,25 @@
 </head>
 
 <body>
-  <h1 style="color: #5e9ca0;">The Basil experiment </h1>
+  <h1 style="color: #5e9ca0;">Lite+Fog AI section </h1>
+  <h2 style="color: #5e9ca0;">Development Server </h2>
+
   <h2 style="color: #2e6c80;">Here it will be described what the project is, and what was done so far. </h2>
   <div class="line-block">
-    <p><div class="line"><strong>Outline: </strong> What we do is structure-from-motion (sfm) with COLMAP for 3D-reconstruction of plants.</div></p>
+    <p><div class="line"><strong>Outline: </strong> What we do is structure-from-motion (sfm) with the open source COLMAP for 3D-reconstruction of plants.</div></p>
     <p><div class="line"> The generated point clouds are stored in a cloud database and analyzed with Open3D for features extraction.</div></p>
+  </div>
+  <h3>The experiment setup: </h3>
+  <p><div class="line"> We use 2 Raspberry Pi HQ high quality cameras connected to a Raspberry Pi controller for taking videos of the plants from 2 angles. The vidoes are taken live and
+  then streamed into an image database on Azure Cloud. </div></p>
+  <div class="row">
+    <div class="column">
+        <p>{% load static %} <img src="{% static "expirementsetup1.jpg" %}" alt="home" width="400" height="500" /> </p>
+    </div>
+    <p><div class="line"> The white background is used for "fooling" the reconstruction software. Since usually it assumes the object is fixed and the cameras are moving, where for us it is the other way around. </div></p>
+    <div class="column">
+        <p>{% load static %} <img src="{% static "expirementsetup2.jpg" %}" alt="home" width="400" height="500" /> </p>
+    </div>
   </div>
   <p>
     <div class="sketchfab-embed-wrapper">
