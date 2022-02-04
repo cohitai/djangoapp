@@ -11,17 +11,24 @@
 </head>
 
 <body>
-  <h1 style="color: #5e9ca0;">Lite+Fog AI section </h1>
-  <h2 style="color: #5e9ca0;">Development Server </h2>
+  <h1 style="color: #5e9ca0;">Lite+Fog AI & ML projects  </h1>
+  <h2 style="color: #5e9ca0;"> (Development Server) </h2>
 
-  <h2 style="color: #2e6c80;">Here it will be described what the project is, and what was done so far. </h2>
-  <div class="line-block">
-    <p><div class="line"><strong>Outline: </strong> What we do is structure-from-motion (sfm) with the open source COLMAP for 3D-reconstruction of plants.</div></p>
-    <p><div class="line"> The generated point clouds are stored in a cloud database and analyzed with Open3D for features extraction.</div></p>
-  </div>
-  <h3>The experiment setup: </h3>
-  <p><div class="line"> We use 2 Raspberry Pi HQ high quality cameras connected to a Raspberry Pi controller for taking videos of the plants from 2 angles. The vidoes are taken live and
+  <h2 style="color: #2e6c80;">Introduction</h2>
+  <p><div class="line"><strong>Lite+Fog industries </strong>  is a vertical farming Berlin-based company, specialized in indoor farming of crops.</div></p>
+  <p><div class="line"> Its AI unit, "Lite+Fog.ml", was established in order to equip its models prototypes with an optical modern AI- native data collection system for a quick and
+  accurate plant analysis. </div></p>
+  <p><div class="line"> Thus, its end-goal is to be described as the implementation of an embedded optical system, one which uses strong AI- algorithms for real-time plant phono-typing and understanding. </div></p>
+  <p><div class="line"> As a bi-product of our guideline project, we got into developing a solid and robust Backend for the data collection and visualization, one which is cloud native in MS-Azure.  </div></p>
+  <p><div class="line">In fact, our data pipelines start at the RT Embedded level - the plant level -  for the acquiring good optical data to be processed. Thereafter it is streamed into 3D reconstruction algorithms, preparing the data for feature extraction.</div></p>
+  <p><div class="line">Using AI clustering algorithms and neural nets on these point clouds, we arrived at an assessment of the plant, and its growth prediction. </div></p>
+
+  <h2 style="color: #2e6c80;">The experiment setup</h2>
+
+  <p><div class="line"> We use 2 Raspberry Pi HQ cameras connected to a Raspberry Pi controller for taking videos of the plants from 2 angles. The vidoes are taken live and
   then streamed into an image database on Azure Cloud. </div></p>
+  <p><div class="line"> The data is organized in a container and mapped as input to the a 3D-reconstruction software for generating point clouds data of the plants. </div></p>
+  <p><div class="line"> The point clouds are stored in a cloud database and analyzed with Open3D for features extraction.</div></p>
   <div class="row">
     <div class="column">
         <p>{% load static %} <img src="{% static "expirementsetup1.jpg" %}" alt="home" width="400" height="500" /> </p>
