@@ -20,10 +20,32 @@
       .content {
       max-width: 750px;
       margin: auto;}
+
+      .logo-img{
+      position: fixed;
+      margin: 10px 15px 15px 10px;
+      left: 0;
+      display:inline;}
+
+      .bg-div{
+      background:#333;
+      height: 50px;}
+
+      .bg-div nav {
+      position: fixed;
+      display:inline;
+      right: 0;}
   </style>
+
 </head>
 
 <body>
+    <!--logo-->
+    <div class="bg-div">
+        <p>{% load static %}
+        <img class="logo-img" src="{% static "logo.jpg" %}" ALT="align box" ALIGN=CENTER>
+        </p>
+    </div>
   <!--Navbar-->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <a class="navbar-brand" href="http://www.liteandfog.com">Lite+Fog</a>
@@ -44,8 +66,6 @@
         </ul>
       </div>
     </nav>
-
-
 
  <div class="content">
   <h1 style="color: #5e9ca0;">Lite+Fog AI & ML projects  </h1>
