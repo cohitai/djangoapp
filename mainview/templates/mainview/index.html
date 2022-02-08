@@ -1,106 +1,113 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lite+Fog machine learning</title>
+        <meta name="description" content=" Template for new projects.">
 
-  <title>Lite+Fog machine learning</title>
-  <meta name="description" content=" Template for new projects.">
+        <!--css top navbar link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-  <!--css top navbar link -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <style>
+            .content {
+                max-width: 750px;
+                margin: auto;}
 
-  <style>
-      .content {
-      max-width: 750px;
-      margin: auto;}
+            .logo-img{
+                position: fixed;
+                margin: 10px 25px 25px 10px;
+                left: 0;
+                display:inline;}
 
-      .logo-img{
-      position: fixed;
-      margin: 10px 25px 25px 10px;
-      left: 0;
-      display:inline;}
+            .bg-div{
+                background:#333;
+                height: 50px;}
 
-      .bg-div{
-      background:#333;
-      height: 50px;}
+            .bg-div nav {
+                position: fixed;
+                display:inline;
+                right: 0;}
+            .logo{
+                position:fixed;
+	            top:50;
+	            left:10;
+                }
+        </style>
+    </head>
 
-      .bg-div nav {
-      position: fixed;
-      display:inline;
-      right: 0;}
-  </style>
+    <body>
+        <div class="logo">
+	        {% load static %}<img class="logo-img" src="{% static "logo.jpg" %}" ALT="align box" ALIGN=CENTER>
+        </div>
+        <!--logo-->
+        <!---<div class="bg-div">
+            <p>{% load static %}<img class="logo-img" src="{% static "logo.jpg" %}" ALT="align box" ALIGN=CENTER></p>
+        </div> -->
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <a class="navbar-brand" href="http://www.liteandfog.com">Lite+Fog</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" vertical-align="middle" data-target="navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-</head>
+    <div class="content">
+        <h1 style="color: #5e9ca0;">Lite+Fog AI & ML projects  </h1>
+        <h2 style="color: #a0625e;"> (Development Server) </h2>
+        <h2 style="color: #2e6c80;">Introduction</h2>
+        <p><div class="line"><strong>Lite+Fog industries </strong>  is a vertical farming Berlin-based company, specialized in indoor farming of crops.</div></p>
+        <p><div class="line"> Its AI unit, "Lite+Fog.ml", is established in order to equip its prototypes with a modern optical AI- native data collection system for a quick and
+        accurate plant assessment. </div></p>
+        <p><div class="line"> Thus, its end-goal is to be described as the implementation of an embedded optical system, one which uses strong AI- algorithms for real-time plant phono-typing and understanding. </div></p>
+        <p><div class="line"> As a bi-product of the guideline project, we got into developing a solid and robust Backend infrastructure for data collection, visualization and serving purposes, which is cloud native in MS-Azure.  </div></p>
+        <p><div class="line">In fact, our data pipelines start at the RT Embedded level - plant level -  for acquiring good optical data to be processed. Thereafter, it is streamed into complex 3D reconstruction algorithms, preparing the data for feature extraction.</div></p>
+        <p><div class="line">Using AI clustering algorithms and neural nets on these point clouds, we arrived at an assessment of the plant, and its growth prediction. </div></p>
 
-<body>
-    <!--logo-->
-    <div class="bg-div">
-        <p>{% load static %}
-        <img class="logo-img" src="{% static "logo.jpg" %}" ALT="align box" ALIGN=CENTER>
+        <h1 style="color: #5e9ca0;">Interactive illustration from our lab</h1>
+        <h2 style="color: #2e6c80;">Experiment setup</h2>
+
+        <p><div class="line"> We use 2 Raspberry Pi HQ cameras connected to a Raspberry Pi controller for taking videos of the plants from 2 angles. The vidoes are taken live and
+        then streamed into an image database on Azure Cloud. </div></p>
+        <p><div class="line"> The data is organized in a container and mapped as input to the a 3D-reconstruction software for generating point clouds data of the plants. </div></p>
+        <p><div class="line"> The point clouds are stored in a cloud database and analyzed with Open3D for features extraction.</div></p>
+        <div class="row">
+            <div class="column">
+                <p>{% load static %} <img src="{% static "expirementsetup1.jpg" %}" alt="home" width="400" height="500" /></p>
+            </div>
+                <p><div class="line"> The white background is used for "fooling" the reconstruction software. Since usually it is assumed that the object is fixed and the camera is in motion, whereas for us, it is the other way around. </div></p>
+            <div class="column">
+                <p>{% load static %} <img src="{% static "expirementsetup2.jpg" %}" alt="home" width="400" height="500" /></p>
+            </div>
+        </div>
+        <p>
+            <div class="line"> Below you could play with a visualisation of a 3D basil plant that we made through a dense reconstruction by SfM. </div>
+        </p>
+        <p>
+            <div class="sketchfab-embed-wrapper"> <iframe title="dense_inlier (6)" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/8cb32824aac84a6eb16b0bed91a04294/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/dense-inlier-6-8cb32824aac84a6eb16b0bed91a04294?utm_medium=embed&utm_campaign=share-popup&utm_content=8cb32824aac84a6eb16b0bed91a04294" target="_blank" style="font-weight: bold; color: #1CAAD9;"> dense_inlier (6) </a> by <a href="https://sketchfab.com/itai.cohen?utm_medium=embed&utm_campaign=share-popup&utm_content=8cb32824aac84a6eb16b0bed91a04294" target="_blank" style="font-weight: bold; color: #1CAAD9;"> itai.cohen </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8cb32824aac84a6eb16b0bed91a04294" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+        </p>
+        <p>
+            <div class="sketchfab-embed-wrapper"><iframe title="dense_inlier" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/8e27c4b4085a49efa306b243f23e8342/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/dense-inlier-8e27c4b4085a49efa306b243f23e8342?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;"> dense_inlier </a> by <a href="https://sketchfab.com/itai.cohen?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;"> itai.cohen </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
         </p>
     </div>
-  <!--Navbar-->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <a class="navbar-brand" href="http://www.liteandfog.com">Lite+Fog</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" vertical-align="middle" data-target="navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
- <div class="content">
-  <h1 style="color: #5e9ca0;">Lite+Fog AI & ML projects  </h1>
-  <h2 style="color: #a0625e;"> (Development Server) </h2>
-
-  <h2 style="color: #2e6c80;">Introduction</h2>
-  <p><div class="line"><strong>Lite+Fog industries </strong>  is a vertical farming Berlin-based company, specialized in indoor farming of crops.</div></p>
-  <p><div class="line"> Its AI unit, "Lite+Fog.ml", is established in order to equip its prototypes with a modern optical AI- native data collection system for a quick and
-  accurate plant assessment. </div></p>
-  <p><div class="line"> Thus, its end-goal is to be described as the implementation of an embedded optical system, one which uses strong AI- algorithms for real-time plant phono-typing and understanding. </div></p>
-  <p><div class="line"> As a bi-product of the guideline project, we got into developing a solid and robust Backend infrastructure for data collection, visualization and serving purposes, which is cloud native in MS-Azure.  </div></p>
-  <p><div class="line">In fact, our data pipelines start at the RT Embedded level - plant level -  for acquiring good optical data to be processed. Thereafter, it is streamed into complex 3D reconstruction algorithms, preparing the data for feature extraction.</div></p>
-  <p><div class="line">Using AI clustering algorithms and neural nets on these point clouds, we arrived at an assessment of the plant, and its growth prediction. </div></p>
-
-  <h1 style="color: #5e9ca0;">Interactive illustration from our lab</h1>
-  <h2 style="color: #2e6c80;">Experiment setup</h2>
-
-  <p><div class="line"> We use 2 Raspberry Pi HQ cameras connected to a Raspberry Pi controller for taking videos of the plants from 2 angles. The vidoes are taken live and
-  then streamed into an image database on Azure Cloud. </div></p>
-  <p><div class="line"> The data is organized in a container and mapped as input to the a 3D-reconstruction software for generating point clouds data of the plants. </div></p>
-  <p><div class="line"> The point clouds are stored in a cloud database and analyzed with Open3D for features extraction.</div></p>
-  <div class="row">
-    <div class="column">
-        <p>{% load static %} <img src="{% static "expirementsetup1.jpg" %}" alt="home" width="400" height="500" /> </p>
-    </div>
-    <p><div class="line"> The white background is used for "fooling" the reconstruction software. Since usually it is assumed that the object is fixed and the camera is in motion, whereas for us, it is the other way around. </div></p>
-    <div class="column">
-        <p>{% load static %} <img src="{% static "expirementsetup2.jpg" %}" alt="home" width="400" height="500" /> </p>
-    </div>
-  </div>
-  <p><div class="line"> Below you could play with a visualisation of a 3D basil plant that we got with our methods.</div></p>
-  <p>
-    <div class="sketchfab-embed-wrapper">
-          <iframe title="dense_inlier" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/8e27c4b4085a49efa306b243f23e8342/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/dense-inlier-8e27c4b4085a49efa306b243f23e8342?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;"> dense_inlier </a> by <a href="https://sketchfab.com/itai.cohen?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;"> itai.cohen </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
-  </p>
- </div>
 </body>
 </html>
