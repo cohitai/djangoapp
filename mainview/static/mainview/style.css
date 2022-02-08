@@ -1,0 +1,22 @@
+.content {
+          max-width: 750px;
+          margin: auto;}
+
+.logo-img{
+          position: fixed;
+          margin: 75px 0px 30px 20px;
+          left: 0;
+          display:inline;}
+
+.bg-div{
+        background:#333;
+        height: 50px;}
+
+.bg-div nav {
+             position: fixed;
+             display:inline;
+             right: 0;}
+.logo{
+      position:fixed;
+	  top:50;
+	  left:10;}

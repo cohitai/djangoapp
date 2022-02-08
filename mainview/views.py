@@ -1,10 +1,21 @@
 from django.shortcuts import render
+#from django.http import HttpResponse
 
 # Create your views here.
 
-from django.http import HttpResponse
-
 
 def index(request):
-    #return HttpResponse("Hello, world. You're at the light+fog root.")
     return render(request, 'mainview/index.html')
+
+
+def products(request):
+    return render(request, 'mainview/product.html')
+
+
+def contact(request):
+    return render(request, 'mainview/contact.html')
+
+
+def blog(request):
+    return render(request, 'mainview/blog.html')
+
