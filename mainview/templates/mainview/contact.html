@@ -1,19 +1,21 @@
 {% extends "mainview/base.html" %}
 
+{% block title %}
+    <div class="Content">
+        <h1 style="color: #2e6c80;">Contact Details</h1>
+    </div>
+{% endblock %}
+
 {% block content %}
     <div class="content">
-        <h2 style="color: #2e6c80;">Contact</h2>
-        <p><div>
-            <strong>Email:</strong> itai.cohen@liteandfog.com
-        </div></p>
-
-        <div>
-            <p> Lite+Fog GmbH </p>
-            <p> Schwarze-Pumpe-Weg 16 </p>
-            <p> c/o MotionLab.Berlin </p>
-            <p> 12681 Berlin </p>
-            <p> Germany </p>
-        </div>
+        <strong>itai.cohen@liteandfog.com</strong>
+        <ul>
+            <li> Lite+Fog GmbH </li>
+            <li> Schwarze-Pumpe-Weg 16 </li>
+            <li> c/o MotionLab.Berlin </li>
+            <li> 12681 Berlin </li>
+            <li> Germany </li>
+        </ul>
     </div>
 
 {% endblock %}
