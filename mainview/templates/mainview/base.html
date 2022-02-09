@@ -18,12 +18,10 @@
     </head>
 
     <body>
-        <div class="logo">
-	        {% load static %}<img class="logo-img" src="{% static "logo.jpg" %}" ALT="align box" ALIGN=CENTER>
-        </div>
+
         <!--logo-->
-        <!---<div class="bg-div">
-            <p>{% load static %}<img class="logo-img" src="{% static "logo.jpg" %}" ALT="align box" ALIGN=CENTER></p>
+        <!-- <div class="logo">
+	        {% load static %}<img class="logo-img" src="{% static "logo.jpg" %}" ALT="align box" ALIGN=CENTER>
         </div> -->
         <!--Navbar-->
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -48,5 +46,22 @@
                 </ul>
             </div>
         </nav>
+
+    <div  id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <div>
+        <h2>Time:</h2>
+
+        <button type="button"
+            onclick="document.getElementById('demo').innerHTML = Date()">
+            Display Date and Time.
+        </button>
+
+        <p id="demo"></p>
+    </div>
+
+
 </body>
 </html>
