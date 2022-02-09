@@ -31,10 +31,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href='home'>Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href='products'>Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href='blog'>Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href='contact'>Contact</a></li>
+                    {% url 'home' as url %}
+                    <li class="nav-item {% if request.path == url %}active{% endif %}"><a class="nav-link" href={{ url }}>Home</a></li>
+                    {% url 'products' as url %}
+                    <li class="nav-item {% if request.path == url %}active{% endif %}"><a class="nav-link" href={{ url }}>Products</a></li>
+                    {% url 'blog' as url %}
+                    <li class="nav-item {% if request.path == url %}active{% endif %}"><a class="nav-link" href={{ url }}>Blog</a></li>
+                    {% url 'contact' as url %}
+                    <li class="nav-item {% if request.path == url %}active{% endif %}"><a class="nav-link" href={{ url }}>Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -54,7 +58,6 @@
 
         <p id="demo"></p>
     </div>
-
 
 </body>
 </html>

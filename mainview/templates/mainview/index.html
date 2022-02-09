@@ -10,8 +10,8 @@
 
 {% block content %}
     <div class="content">
-        <h2 style="color: #a0625e;"> (Development Server) </h2>
-        <h2 style="color: #2e6c80;">Introduction</h2>
+        <h5 style="color: #a0625e;"> (Development Server) </h5>
+        <h3 style="color: #5e9ca0;">Introduction</h3>
         <p><div ><strong>Lite+Fog industries </strong>  is a Berlin-based vertical farming company, specialized in indoor farming of crops.</div></p>
         <p><div > Lite+Fog.ml is an AI research lab spinoff, specialized in machine learning research and computer vision development. Its guiding principle is to equip L+G prototypes with a modern optical AI native data collection systems for a nimble and
         accurate assessment of the plant phase. </div></p>
@@ -20,28 +20,66 @@
         <p><div >In fact, our data pipelines starts at the RT Embedded level - plant level -  for acquiring sufficient optical data to be processed. Thereafter, it is streamed into complex 3D reconstruction algorithms, preparing the data for feature extraction.</div></p>
         <p><div >Using AI clustering algorithms and neural nets on these point clouds, we arrived at an assessment of the plant, and its growth prediction. </div></p>
 
-        <h1 style="color: #5e9ca0;">Interactive illustration from our lab</h1>
-        <h2 style="color: #2e6c80;">Experiment setup</h2>
+        <h2 style="color: #2e6c80;">Interactive illustration from our lab</h2>
+        <h4 style="color: #5e9ca0;">Experiment setup</h4>
 
-        <p><div> The setup described below consists of 2 Raspberry Pi HQ webcam's, connected into a Raspberry Pi controller via Ethernet cables, for shooting videos of the plants from 2 different angles.
-                                The vidoes are taken live and then streamed into an image database our Azure Cloud. </div></p>
-        <p><div> The data is organized in a containers and mapped as input/output to a 3D-reconstruction software for generating point clouds data of the plants. </div></p>
-        <p><div> The point clouds are stored in a cloud database and analyzed with Open3D for features extraction.</div></p>
+        <p><div> The setup described below consists of 2 Raspberry Pi HQ webcam's, connected into a Raspberry Pi controller via Ethernet cables,
+                 for shooting videos of the plants in 2 different angles. The vidoes are taken live and then streamed into an image database our Azure Cloud. </div></p>
 
         <p><img src="{% static "expirementsetup1.jpg" %}" alt="home" width="300" height="300" /> <img src="{% static "expirementsetup2.jpg" %}" alt="home" width="300" height="300" style="float:right" /> </p>
 
         <p><div> The white background is used for "fooling" the reconstruction software. Since usually it is assumed that the object is fixed and the camera is in motion, whereas for us, it is the other way around. </div></p>
+        <h4 style="color: #5e9ca0;">The raw data</h4>
+        <p><div> The images are organized in containers and mapped as input/output to a containerized 3D-reconstruction software for generating point clouds data of the plants. </div></p>
+        <p><div> The point clouds are stored in a cloud database and analyzed with Open3D for features extraction.</div></p>
 
-        <p>
-            <div> Below you could play with a visualisation of a 3D basil plant that we made through a dense reconstruction by SfM. </div>
-        </p>
+        <!-- raw and masked data-->
+        <div class="box">
+            <div class="table">
+                <div class="left">
+                    <div class="nest"><img class="img" src="{% static "raw1.jpg" %}" /></div>
+                    <div><img class="img" src="{% static "raw2.jpg" %}" /></div>
+                </div>
+                <div class="right">
+                    <div class="nest"><img class="img" src="{% static "mask1.jpg" %}" /></div>
+                    <div><img class="img" src="{% static "mask2.jpg" %}" /></div>
+                </div>
+            </div>
+        </div>
+
+        <h4 style="color: #5e9ca0;">3D reconstruction</h4>
+        <p><div> Achieving a high quality point clouds is not trivial. Several camera parameters must be taken into consideration, such as the sharpness, brightness and the frame rate (fps).</div></p>
+        <p><div> The rotation of the target object does not make it any simplier, what led us into involving complex masking algorithms for ruling out all background obstructions.</div></p>
+        <p><div> The Sift matching algorithm for identifying similar pixels in different shots is visualized below. Note how similar pixels from different camera angles are being tracked, as well as those who comes from the objects' rotation.  </div></p>
+
+        <!-- matching details pictures from COLMAP-->
+        <div class="box">
+            <div class="table">
+                <div class="left"><img class="img" src="{% static "overlapping_imgs_1.jpg" %}" /></div>
+                <div class="right">
+                     <div class="nest"><img class="img" src="{% static "overlapping_imgs_2.jpg" %}" /></div>
+                     <div><img class="img" src="{% static "sparse_with_cameras_positions.jpg" %}" /></div>
+                </div>
+             </div>
+        </div>
+
+        <h4 style="color: #5e9ca0;">Dense point clouds</h4>
+        <p><div> At last we come at out the destination, a 3D point cloud representation of the plant. We use these as the basis of our analysis. </div></p>
+        <p><div> Below you could observe visualisations of the 3D basil plant, which we made through a dense reconstruction by SfM as explained above. </div></p>
         <p>
             <div class="sketchfab-embed-wrapper"> <iframe title="dense_inlier (6)" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/8cb32824aac84a6eb16b0bed91a04294/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/dense-inlier-6-8cb32824aac84a6eb16b0bed91a04294?utm_medium=embed&utm_campaign=share-popup&utm_content=8cb32824aac84a6eb16b0bed91a04294" target="_blank" style="font-weight: bold; color: #1CAAD9;"> dense_inlier (6) </a> by <a href="https://sketchfab.com/itai.cohen?utm_medium=embed&utm_campaign=share-popup&utm_content=8cb32824aac84a6eb16b0bed91a04294" target="_blank" style="font-weight: bold; color: #1CAAD9;"> itai.cohen </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8cb32824aac84a6eb16b0bed91a04294" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
         </p>
         <p>
             <div class="sketchfab-embed-wrapper"><iframe title="dense_inlier" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/8e27c4b4085a49efa306b243f23e8342/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/dense-inlier-8e27c4b4085a49efa306b243f23e8342?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;"> dense_inlier </a> by <a href="https://sketchfab.com/itai.cohen?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;"> itai.cohen </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
         </p>
+
+
+        <h4 style="color: #5e9ca0;"> Volume and color Analysis</h4>
+
+        <h4 style="color: #5e9ca0;">PointNet like Neural Nets</h4>
+
     </div>
+
 {% endblock %}
 
 
