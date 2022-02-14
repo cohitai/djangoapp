@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+y_g$927eqzq#$cp4w0yz5(g@(4))$ez-b4)i4(aaf2bk(@@qb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ['20.23.254.148', 'lightandfog.ml', 'www.lightandfog.ml', '127.0.0.1']
+ALLOWED_HOSTS = ['20.23.254.148', 'lightandfog.ml', 'www.lightandfog.ml', '127.0.0.1', "localhost"]
 #ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -141,5 +141,5 @@ GRAPHENE = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = ("http://localhost:8080",)
+CORS_ORIGIN_WHITELIST = ("http://localhost:8080", "http://127.0.0.1:8080")
 
