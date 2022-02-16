@@ -16,52 +16,52 @@
 </template>
 
 <script>
-import gql from 'graphql-tag'
-import AuthorLink from '@/components/AuthorLink'
-export default {
-  name: 'Post',
-  components: {
-    AuthorLink,
-  },
-  data () {
-    return {
-      post: null,
-    }
-  },
-  async created () {
-    const post = await this.$apollo.query({
-        query: gql`query ($slug: String!) {
-          postBySlug(slug: $slug) {
-            title
-            subtitle
-            publishDate
-            metaDescription
-            slug
-            body
-            author {
-              user {
-                username
-                firstName
-                lastName
-              }
+    import gql from 'graphql-tag'
+    import AuthorLink from '@/components/AuthorLink'
+    export default {
+    name: 'Post',
+    components: {
+        AuthorLink,
+    },
+    data () {
+        return {
+        post: null,
+        }
+    },
+    async created () {
+        const post = await this.$apollo.query({
+            query: gql`query ($slug: String!) {
+            postBySlug(slug: $slug) {
+                title
+                subtitle
+                publishDate
+                metaDescription
+                slug
+                body
+                author {
+                user {
+                    username
+                    firstName
+                    lastName
+                }
+                }
+                tags {
+                name
+                }
             }
-            tags {
-              name
-            }
-          }
-        }`,
-        variables: {
-          slug: this.$route.params.slug,
-        },
-    })
-    this.post = post.data.postBySlug
-  },
-  methods: {
-    displayableDate (date) {
-      return new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(new Date(date))
+            }`,
+            variables: {
+            slug: this.$route.params.slug,
+            },
+        })
+        this.post = post.data.postBySlug
+    },
+    methods: {
+        displayableDate (date) {
+        return new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(new Date(date))
+        }
+    },
     }
-  },
-}
 </script>
 
 <style>

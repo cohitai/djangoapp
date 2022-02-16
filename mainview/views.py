@@ -1,5 +1,5 @@
 from django.shortcuts import render
-#from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -16,6 +16,10 @@ def contact(request):
     return render(request, 'mainview/contact.html')
 
 
-def blog(request):
-    return render(request, 'mainview/blog.html')
+#def blog(request):
+#    return render(request, 'mainview/blog.html')
+
+
+def redirect(request, **kwargs):
+    return HttpResponseRedirect('http://localhost:%s' % kwargs.get('var'))
 
