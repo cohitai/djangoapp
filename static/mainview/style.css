@@ -1,0 +1,84 @@
+.content {
+          max-width: 750px;
+          margin: auto;}
+
+.logo-img{
+          position: fixed;
+          margin: 75px 0px 30px 20px;
+          left: 0;
+          display:inline;}
+
+.bg-div{
+        background:#333;
+        height: 50px;}
+
+.bg-div nav {
+             position: fixed;
+             display:inline;
+             right: 0;}
+.logo{
+      position:fixed;
+	  top:50;
+	  left:10;}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+
+/* img layout */
+*, *:before, *:after {
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box
+}
+
+.box {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.table {
+  display: table;
+  background: lightblue;
+  border-collapse: collapse;
+  padding: 0;
+  width:100%;
+}
+.left, .right {
+  border-collapse: collapse;
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+.left {
+  background: lightblue;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+}
+.right {
+  background: lightgreen;
+  padding: 10px 10px 10px 10px;
+}
+.nest {
+  padding-bottom: 10px;
+}
+.img {
+  display:block;
+  width: 100%;
+  height: auto;
+}
