@@ -57,10 +57,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+VUE_HTML_DIR = os.path.join(BASE_DIR, "frontend/dist")
+VUE_STATIC_DIR = os.path.join(BASE_DIR, "frontend/dist/static")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [VUE_HTML_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,9 +129,8 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), VUE_STATIC_DIR]
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
-
 
 #DEFAULT_FILE_STORAGE = 'mysite.custom_azure.AzureMediaStorage'
 #MEDIA_LOCATION = '1643598710-615496'
