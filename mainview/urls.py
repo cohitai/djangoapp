@@ -20,9 +20,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('home', views.index, name='home'),
     path('products', views.products, name='products'),
-    # path('blog', views.blog, name='blog'),
-    path('blog', get_new_url, name='blog'),
-    path('contact', views.contact, name='contact')
+    path('contact', views.contact, name='contact'),
+    path('blog', views.blog, name='blog'),
+    # path('blog', get_new_url, name='blog'),
 ]
-
 

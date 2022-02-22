@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',
     'blog',
+    "channels",
+    "graphql_ws.django",
     'graphene_django',
     "corsheaders",
 ]
@@ -145,3 +147,5 @@ GRAPHENE = {
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = ("http://localhost:8080", "http://127.0.0.1:8080")
 
+
+ASGI_APPLICATION = 'graphql_ws.django.routing.application'

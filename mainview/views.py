@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
+from blog.models import Post
+
 # Create your views here.
 
 
@@ -17,9 +19,13 @@ def contact(request):
 
 
 #def blog(request):
-#    return render(request, 'mainview/blog.html')
+    #return render(request, 'mainview/blog.html')
 
 
 def redirect(request, **kwargs):
     return HttpResponseRedirect('http://localhost:%s' % kwargs.get('var'))
 
+
+def blog(req):
+    all_posts = Post.objects.all()
+    return render(req, 'mainview/blog.html', {'posts': all_posts})

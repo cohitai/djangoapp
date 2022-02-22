@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from graphene_django import DjangoObjectType
 
 from blog import models
+import asyncio
 import graphene
 
 
@@ -66,4 +67,14 @@ class Query(graphene.ObjectType):
         )
 
 
-schema = graphene.Schema(query=Query)
+class Subscription(graphene.ObjectType):
+    count_seconds = graphene.Float(up_to=graphene.Int())
+
+    async def resolve_count_seconds(root, info, up_to):
+        for i in range(up_to):
+            yield i
+            await asyncio.sleep(1.)
+        yield up_to
+
+
+schema = graphene.Schema(query=Query, subscription=Subscription)
