@@ -1,4 +1,4 @@
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from django.shortcuts import redirect
 from . import views
 
@@ -21,7 +21,8 @@ urlpatterns = [
     path('home', views.index, name='home'),
     path('products', views.products, name='products'),
     path('contact', views.contact, name='contact'),
-    path('blog', views.blog, name='blog'),
+    path('blog', include('blog_view.urls')),
+    #path('blog', views.blog, name='blog'),
     # path('blog', get_new_url, name='blog'),
 ]
 

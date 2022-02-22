@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',
     'blog',
+    'blog_view',
     "channels",
     "graphql_ws.django",
     'graphene_django',
@@ -65,10 +66,12 @@ VUE_STATIC_DIR = os.path.join(BASE_DIR, "frontend/dist/static")
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, "mainview/templates/mainview")
 
+TEMPLATES_DIR_BLOG = os.path.join(BASE_DIR, "blog_view/templates/")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [VUE_HTML_DIR, TEMPLATES_DIR],
+        'DIRS': [VUE_HTML_DIR, TEMPLATES_DIR, TEMPLATES_DIR_BLOG],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
