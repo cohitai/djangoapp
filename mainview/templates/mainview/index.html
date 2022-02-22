@@ -28,7 +28,7 @@
 
         <p><img src="{% static "expirementsetup1.jpg" %}" alt="home" width="300" height="300" /> <img src="{% static "expirementsetup2.jpg" %}" alt="home" width="300" height="300" style="float:right" /> </p>
 
-        <p><div> The white background is used for "fooling" the reconstruction software. Since usually it is assumed that the object is fixed and the camera is in motion, whereas for us, it is the other way around. </div></p>
+        <p><div> The white background is used for "fooling" the reconstruction software, since usually it is assumed that the object is fixed and the camera is in motion, whereas for us, it is the other way around. </div></p>
         <h4 style="color: #5e9ca0;">The raw data</h4>
         <p><div> The images are organized in containers and mapped as input/output to a containerized 3D-reconstruction software for generating point clouds data of the plants. </div></p>
         <p><div> The point clouds are stored in a cloud database and analyzed with Open3D for features extraction.</div></p>
@@ -49,7 +49,7 @@
 
         <h4 style="color: #5e9ca0;">3D reconstruction</h4>
         <p><div> Achieving a high quality point clouds is not trivial. Several camera parameters must be taken into consideration, such as the sharpness, brightness and the frame rate (fps).</div></p>
-        <p><div> The rotation of the target object does not make it any simplier, what led us into involving complex masking algorithms for ruling out all background obstructions.</div></p>
+        <p><div> The rotation of the target object does not make it any simpler, what led us into involving complex masking algorithms for ruling out all background obstructions.</div></p>
         <p><div> The Sift matching algorithm for identifying similar pixels in different shots is visualized below. Note how similar pixels from different camera angles are being tracked, as well as those who comes from the objects' rotation.  </div></p>
 
         <!-- matching details pictures from COLMAP-->
@@ -65,7 +65,7 @@
 
         <h4 style="color: #5e9ca0;">Dense point clouds</h4>
         <p><div> At last we come at our destination, a 3D point cloud representation of the plant. We use these as the basis for our analysis. </div></p>
-        <p><div> Below you could observe visualisations of the 3D basil plant, which we made through a dense reconstruction by SfM as explained above. </div></p>
+        <p><div> Below you can observe visualisations of the 3D basil plant, which we made through a dense reconstruction by SfM as explained above. </div></p>
         <p>
             <div class="sketchfab-embed-wrapper"> <iframe title="dense_inlier (6)" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/8cb32824aac84a6eb16b0bed91a04294/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/dense-inlier-6-8cb32824aac84a6eb16b0bed91a04294?utm_medium=embed&utm_campaign=share-popup&utm_content=8cb32824aac84a6eb16b0bed91a04294" target="_blank" style="font-weight: bold; color: #1CAAD9;"> dense_inlier (6) </a> by <a href="https://sketchfab.com/itai.cohen?utm_medium=embed&utm_campaign=share-popup&utm_content=8cb32824aac84a6eb16b0bed91a04294" target="_blank" style="font-weight: bold; color: #1CAAD9;"> itai.cohen </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8cb32824aac84a6eb16b0bed91a04294" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
         </p>
