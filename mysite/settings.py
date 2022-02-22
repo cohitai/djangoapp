@@ -62,10 +62,13 @@ ROOT_URLCONF = 'mysite.urls'
 VUE_HTML_DIR = os.path.join(BASE_DIR, "frontend/dist")
 VUE_STATIC_DIR = os.path.join(BASE_DIR, "frontend/dist/static")
 
+
+TEMPLATES_DIR = os.path.join(BASE_DIR, "mainview/templates/mainview")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [VUE_HTML_DIR],
+        'DIRS': [VUE_HTML_DIR, TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
