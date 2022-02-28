@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "graphql_ws.django",
     'graphene_django',
     "corsheaders",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [
@@ -155,3 +156,13 @@ CORS_ORIGIN_WHITELIST = ("http://localhost:8080", "http://127.0.0.1:8080")
 
 
 ASGI_APPLICATION = 'graphql_ws.django.routing.application'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Full',
+        'height': 300,
+        'width': '100%',
+        'removePlugins': 'stylesheetparser',
+        'extraAllowedContent': 'iframe[*]',
+    },
+}

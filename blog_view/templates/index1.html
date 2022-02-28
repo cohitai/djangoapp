@@ -24,14 +24,13 @@
                 <div class=" col-md-8 col-md-10 mx-auto">
                   <div class="site-heading">
                     <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to Lite+Fog awesome Blog </h3>
-                    <p class="text-light">We Love Tech in Agriculture As much as you do..! &nbsp
-                    </p>
-                </div>
-                    </div>
+                    <p class="text-light">We Love Tech in Agriculture As much as you do..! </p>
                   </div>
                 </div>
+              </div>
             </div>
-              </header>
+
+    </header>
         
             <div class="container">
                 <div class="row">
@@ -43,14 +42,14 @@
                   <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.date_created}} </p>
+                    <p class="card-text">{{post.subtitle| safe }}</p>
 
-                    <p class="card-text">{{post.body|slice:":200" }}</p>
+                    <br/><br/>
                     <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                   </div>
-                 
                 </div>
                 {% endfor %}
-            </div>
+              </div>
                 {% block sidebar %}
                 {% include 'sidebar1.html' %}
                 {% endblock sidebar %}
