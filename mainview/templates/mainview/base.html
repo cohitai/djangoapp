@@ -17,6 +17,11 @@
         <link rel="stylesheet" href="static/mainview/style.css">
     </head>
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
     <body>
 
         <!--logo-->
@@ -48,16 +53,6 @@
     <!--content block -->
     {% block content %}{% endblock %}
 
-        <div>
-        <h2>Time:</h2>
-
-        <button type="button"
-            onclick="document.getElementById('demo').innerHTML = Date()">
-            Display Date and Time.
-        </button>
-
-        <p id="demo"></p>
-    </div>
 
 </body>
 </html>

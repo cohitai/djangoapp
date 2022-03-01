@@ -73,19 +73,79 @@
             <div class="sketchfab-embed-wrapper"><iframe title="dense_inlier" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/8e27c4b4085a49efa306b243f23e8342/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/dense-inlier-8e27c4b4085a49efa306b243f23e8342?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;"> dense_inlier </a> by <a href="https://sketchfab.com/itai.cohen?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;"> itai.cohen </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=8e27c4b4085a49efa306b243f23e8342" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
         </p>
 
+
+        <h4 style="color: #5e9ca0;"> Calibration with OpenCV</h4>
+
+        <p>We describe below how we calibrates our cheap $50&nbsp;Raspberry Pi&#39;s HQ web camara using OpenCV module.</p>
+
+        <p><img src="{% static "hqcameraraspberrypi.jpg" %}" class="center" alt="home" width="150" height="250" /></p>
+
+        <p>Before we start, it will be prove worthy to keep in mind some of its technical specs. So we go ahead and look into the <a href="https://www.raspberrypi.com/documentation/accessories/camera.html">Raspberry Pi website</a>'s Hardware section, where we are able to collect the following notes for our expiremental optical equipment. It has the <strong>Sony</strong> <strong>IMX477</strong>&nbsp;sensor with surface area of<strong> 6.287mm </strong>x<strong> 4.712 mm.</strong> The pixels size are the cubical <strong>1.55</strong> &micro;m x <strong>1.55</strong> &micro;m. The images produced are of&nbsp;<strong>4056 x 3040</strong> pixels.&nbsp;We chose the affordable  <strong>25$</strong> CS-mount lens with optical focal length: <strong>6mm</strong>. If our calibration is precise, we should be able to redeem this value at the end of the procedue.</p>
+
+        <p>We printed 11 x 8 checkboard pattern to be used as our target 3D real world calibration pattern.</p>
+
+        <p>Now when everything is set, we take random shots of the chessboard pitch at general positions as possible, being careful not to fall into degenerate configurations, as explained in <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr98-71.pdf"> Zhang's paper</a>. </p>
+
+        <p> The OpenCV calibration code we use is extensively outlined in the <a href="https://docs.opencv.org/3.4/dc/dbb/tutorial_py_calibration.html"> official docs.<a></p>
+
+        <video class="center" width="320" height="240" controls>
+            <source src="{% static "rawframes.mp4" %}" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+        </video>
+
+        <p>The code consists of the two tasks of pattern detection followed by the actual calibration solver. The first step is done with cv.findChessboardCorners and cv.cornerSubPix functions.  </p>
+        <p>The calibration itself is done with cv.calibrateCamera.</p>
+        <p>The second one is used to improve precision of the results, which we found highly influential for the process. </p>
+        <p>Look closely in the video below to see the actual detected pattern. </p>
+
+        <video class="center" width="320" height="240" controls>
+            <source src="{% static "chessboarded.mp4" %}" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+        </video>
+
+
+        <p>Having found 3D to 2D coordinates correspondence, we apply cv.calibrateCamera to it, for extracting the internal parameters of the camera.</p>
+        <p>Explicitly, for this example, we got the following values: </p>
+        <p>
+            \begin{bmatrix} f_x & 0 & c_x\\ 0 & f_y & c_y \\ 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 3956.30286 & 0 & 2099.30134\\ 0 & 3949.07975 & 1568.10904 \\ 0 & 0 & 1 \end{bmatrix}
+        </p>
+        <p>with a re-projection error:  </p>
+        <p class="center">
+            error: = 0.21583277739214826,
+        </p>
+        <p>Which is the re-projection error and should be close to zero. </p>
+        <p>Using the undistorter option (cv.undistort), our corrected camera shots look as follows: </p>
+        <video class="center" width="320" height="240" controls>
+            <source src="{% static "undistorted.mp4" %}" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+        </video>
+
+        <p>Last we use the function cv.calibrationMatrixValues with the sensor parameters mentioned above, to see how close the acquired optical length with the given one (6mm), We get here: </p>
+        <p class="center">
+            (54.267371835571716, 42.0984458128734, 6.132464521011343, (3.2540205953986927, 2.430569016902181), 0.9981742764382634)
+        </p>
+        <p>The first two values are the field of view angles, horizontally and vertically. The third value is the optical focal length, which seems rather close. The forth tuple value is the principal point. </p>
+
+
+
+
+
+
+
+
+
+
+
         <!--
         <h4 style="color: #5e9ca0;"> Volume and color Analysis</h4>
             <p> <img src="{% static "hqcameraraspberrypi.jpg" %}" alt="home" width="300" height="300" style="float:right" /> </p>
 
 
         <h4 style="color: #5e9ca0;">PointNet like Neural Nets</h4>
-
-            <video width="320" height="240" controls>
-                <source src="{% static "chessboarded.mp4" %}" type="video/mp4">
-                <source src="movie.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
-            </video>
-         -->
+        -->
 
     </div>
 
