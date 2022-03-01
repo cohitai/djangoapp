@@ -22,12 +22,17 @@ from graphene_django.views import GraphQLView
 
 from django.views.generic.base import TemplateView
 
+from django.conf.urls.static import static
+from django.conf import settings
+from blog_view import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainview.urls')),
     path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     path('blog1/', TemplateView.as_view(template_name="index.html")),
-]
+    path('ckeditor', include("ckeditor_uploader.urls")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
 
