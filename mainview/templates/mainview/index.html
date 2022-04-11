@@ -114,7 +114,7 @@
         <p class="center">
             error: = 0.21583277739214826,
         </p>
-        <p>Which is the re-projection error and should be close to zero. </p>
+        <p>Which should be as close to zero as possible, for a good calibration. </p>
         <p>Using the undistorter option (cv.undistort), our corrected camera shots look as follows: </p>
         <video class="center" width="320" height="240" controls>
             <source src="{% static "undistorted.mp4" %}" type="video/mp4">
@@ -122,26 +122,15 @@
                 Your browser does not support the video tag.
         </video>
 
-        <p>Lastly, we use the function cv.calibrationMatrixValues with the sensor parameters mentioned above, to see how close the acquired optical length with the given one (6mm), We got here: </p>
+        <p>Last, we use the function cv.calibrationMatrixValues with the sensor parameters mentioned above, to see how close the acquired optical length with the given one (6mm), We got here: </p>
         <p class="center">
             (54.267371835571716, 42.0984458128734, 6.132464521011343, (3.2540205953986927, 2.430569016902181), 0.9981742764382634)
         </p>
         <p>The first two values are the field of view (FoV) angles, horizontally and vertically. The third value is the optical focal length, which seems rather close. The forth tuple value is the principal point. </p>
 
-
-
-
-
-
-
-
-
-
-
         <!--
         <h4 style="color: #5e9ca0;"> Volume and color Analysis</h4>
             <p> <img src="{% static "hqcameraraspberrypi.jpg" %}" alt="home" width="300" height="300" style="float:right" /> </p>
-
 
         <h4 style="color: #5e9ca0;">PointNet like Neural Nets</h4>
         -->
