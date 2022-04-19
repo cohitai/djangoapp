@@ -3,14 +3,13 @@
 
 {% block title %}
     <div class="content">
-        <h1 style="color: #2e6c80;">Lite+Fog AI & ML projects  </h1>
+        <h1 style="color: #2e6c80;">Lite+Fog AI Operations  </h1>
     </div>
 {% endblock %}
 
 
 {% block content %}
     <div class="content">
-        <h5 style="color: #a0625e;"> (Development Server) </h5>
         <h3 style="color: #5e9ca0;">Introduction</h3>
         <p><div ><strong>Lite+Fog industries </strong>  is a Berlin-based vertical farming company, specialized in indoor farming of crops.</div></p>
         <p><div > Lite+Fog.ml is an AI research lab spinoff, specialized in machine learning research and computer vision development. Its guiding principle is to equip L+G prototypes with a modern optical AI native data collection systems for a nimble and
@@ -133,7 +132,7 @@
             <p> <img src="{% static "hqcameraraspberrypi.jpg" %}" alt="home" width="300" height="300" style="float:right" /> </p>
         -->
         <h4 style="color: #5e9ca0;">Training Nerf</h4>
-        <p>Aside from the photogrammetry method exemplified above, we were able to produce also points cloud using Neural Nets. The method is called <a href="https://github.com/bmild/nerf">"Nerf"<a>, Neural radiance fields, and is typically used for
+        <p>Aside from the photogrammetry methods exemplified above, we were able to produce also points cloud using Neural Nets. The method is called <a href="https://github.com/bmild/nerf">"Nerf"<a>, Neural radiance fields, and is typically used for
            generating synthetic scenes from a sparse input of 2d images. The network comprises a crude network of 8 fully-connected layers, along a fine one which yields high quality reconstructions.  </p>
         <p>Together with its Hierarchical sampling method and positional encoding, we were able to run the algorithm successfully on our data, and to receive PSNR reconstruction score of up to 31, which is on-par to what stated in the paper.</p>
         <p>We give below demonstrations of our implementation. The training session, the mp4 output of the full network, and the point cloud which we were finally managed to acquire. </p>
@@ -153,7 +152,18 @@
         <div class="sketchfab-embed-wrapper"> <iframe title="pcd_test2" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/712b9a8bdf6b4fbba5ee49cb59ef8cdf/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/pcd-test2-712b9a8bdf6b4fbba5ee49cb59ef8cdf?utm_medium=embed&utm_campaign=share-popup&utm_content=712b9a8bdf6b4fbba5ee49cb59ef8cdf" target="_blank" style="font-weight: bold; color: #1CAAD9;"> pcd_test2 </a> by <a href="https://sketchfab.com/itai.cohen?utm_medium=embed&utm_campaign=share-popup&utm_content=712b9a8bdf6b4fbba5ee49cb59ef8cdf" target="_blank" style="font-weight: bold; color: #1CAAD9;"> itai.cohen </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=712b9a8bdf6b4fbba5ee49cb59ef8cdf" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
         </p>
 
+        <h4 style="color: #5e9ca0;">Plenoxol, Radiance Fields without Neural Networks. </h4>
+        <p>Here we show our results using the latest code from <a href="https://github.com/sxyu/svox2">"Radiance Fields<a></a> without Neural Networks". This method is much faster than Nerf and produces roughly the same quality.</p>
+        <p>Producing the following video took us 15 minutes, on our machine. </p>
 
+        <video class="center" width="320" height="240" controls>
+            <source src="{% static "plenoxels.mp4" %}" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+        </video>
+
+        <p></p>The synthesized point cloud is given below, without the RGB colors. </p>
+        <p><div class="sketchfab-embed-wrapper"> <iframe title="Plenoxels cloud (no RGB)" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/909d41af8c934081b4da1c4304c8452e/embed?ui_theme=dark"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/plenoxels-cloud-no-rgb-909d41af8c934081b4da1c4304c8452e?utm_medium=embed&utm_campaign=share-popup&utm_content=909d41af8c934081b4da1c4304c8452e" target="_blank" style="font-weight: bold; color: #1CAAD9;"> Plenoxels cloud (no RGB) </a> by <a href="https://sketchfab.com/itai.cohen?utm_medium=embed&utm_campaign=share-popup&utm_content=909d41af8c934081b4da1c4304c8452e" target="_blank" style="font-weight: bold; color: #1CAAD9;"> itai.cohen </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=909d41af8c934081b4da1c4304c8452e" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div></p>
     </div>
 
 {% endblock %}
